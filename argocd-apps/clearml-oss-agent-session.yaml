@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clearml-oss-agent-session
+  namespace: argocd
+spec:
+  destination:
+    namespace: clearml
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: clearml-agent
+    repoURL: https://allegroai.github.io/clearml-helm-charts
+    targetRevision: x
+    helm:
+      values: |
+        agentk8sglue:
+          debugMode: true
+          queue: interactive
+        sessions:
+          portModeEnabled: true
+          externalIP: 172.31.29.252
+          startingPort: 30010
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
