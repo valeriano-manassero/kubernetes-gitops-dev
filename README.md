@@ -36,3 +36,10 @@ User is `admin` with passowrd `admin` (or variable `argocd_password` if overridd
 Once logged in you will have some preconfigured application that can be created with a sync:
 
 ![alt text](docs/argocd_main.jpg "ArgoCD Apps")
+
+### Available preconfigured applications
+
+* ClearML (Server, Agent, Serving) - https://clear.ml
+* TrinoDB - https://trino.io
+* Prometheus - https://prometheus.io\
+* more coming...
