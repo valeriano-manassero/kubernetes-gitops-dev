@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argocd-apps
-    repoURL: https://github.com/valeriano-manassero/kubernetes-gitops-dev.git
-    targetRevision: HEAD
+    chart: clearml
+    repoURL: https://allegroai.github.io/clearml-helm-charts
+    targetRevision: x
     helm:
       values: |
         apiserver:
