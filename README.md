@@ -32,3 +32,7 @@ terraform destroy
 ArgoCD is available after cluster bootstrap at http://argocd.127-0-0-1.nip.io" (or variable `argocd_hostname` if overridden).
 
 User is `admin` with passowrd `admin` (or variable `argocd_password` if overridden).
+
+Once logged in you will have some preconfigured application that can be created with a sync:
+
+![alt text](docs/argocd_main.jpg "ArgoCD Apps")
