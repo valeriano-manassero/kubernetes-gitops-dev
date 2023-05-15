@@ -32,21 +32,21 @@ spec:
           ingress:
             enabled: true
             hostName: "app.clearml.127-0-0-1.nip.io"
-              additionalConfigs:
-        apiserver.conf: |
-          auth {
-            fixed_users {
-              enabled: true
-              pass_hashed: false
-              users: [
-                {
-                  username: "testuser"
-                  password: "testpassword"
-                  name: "Test User"
-                },
-              ]
+        additionalConfigs:
+          apiserver.conf: |
+            auth {
+              fixed_users {
+                enabled: true
+                pass_hashed: false
+                users: [
+                  {
+                    username: "testuser"
+                    password: "testpassword"
+                    name: "Test User"
+                  },
+                ]
+              }
             }
-          }
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
