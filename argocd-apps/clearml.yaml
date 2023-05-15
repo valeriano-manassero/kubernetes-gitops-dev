@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clearml
+  namespace: argocd
+spec:
+  destination:
+    namespace: clearml
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argocd-apps
+    repoURL: https://github.com/valeriano-manassero/kubernetes-gitops-dev.git
+    targetRevision: HEAD
+    helm:
+      values: |
+        apiserver:
+          service:
+            type: ClusterIP
+          ingress:
+            enabled: true
+            hostName: "api.clearml.127-0-0-1.nip.io"
+        fileserver:
+          service:
+            type: ClusterIP
+          ingress:
+            enabled: true
+            hostName: "files.clearml.127-0-0-1.nip.io"
+        webserver:
+          service:
+            type: ClusterIP
+          ingress:
+            enabled: true
+            hostName: "app.clearml.127-0-0-1.nip.io"
+              additionalConfigs:
+        apiserver.conf: |
+          auth {
+            fixed_users {
+              enabled: true
+              pass_hashed: false
+              users: [
+                {
+                  username: "testuser"
+                  password: "testpassword"
+                  name: "Test User"
+                },
+              ]
+            }
+          }
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
