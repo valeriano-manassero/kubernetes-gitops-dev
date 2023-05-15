@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clearml-oss-serving
+  namespace: argocd
+spec:
+  destination:
+    namespace: clearml
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: clearml-serving
+    repoURL: https://allegroai.github.io/clearml-helm-charts
+    targetRevision: x
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true

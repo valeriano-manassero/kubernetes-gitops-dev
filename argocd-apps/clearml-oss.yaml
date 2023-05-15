@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: clearml-oss-arm64
+  name: clearml-oss
   namespace: argocd
 spec:
   destination:
@@ -47,12 +47,6 @@ spec:
           ingress:
             enabled: true
             hostName: "app.clearml.127-0-0-1.nip.io"
-        mongodb:
-          image:
-            repository: arm64v8/mongo
-            tag: latest
-          persistence:
-            mountPath: /data/db
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
