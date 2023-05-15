@@ -1,4 +1,4 @@
-# Kubernetes Cluster GItOps development environment
+# Kubernetes Cluster GitOps development environment
 
 This repository contains the Terraform code to create a Kubernetes cluster using [Kind](https://kind.sigs.k8s.io/).
 
@@ -17,7 +17,6 @@ Eventually create a `terraform.tfvars` to override variables defined in `variabl
 
 ```bash
 # Create a Kubernetes cluster using Terraform
-cd cluster-bootstrap
 terraform init
 terraform apply
 ```
@@ -25,7 +24,6 @@ terraform apply
 ### Destroy
 
 ```bash
-cd cluster-bootstrap
 terraform destroy
 ```
 
