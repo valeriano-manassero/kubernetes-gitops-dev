@@ -41,5 +41,5 @@ Once logged in you will have some preconfigured application that can be created 
 
 * ClearML (Server, Agent, Serving) - https://clear.ml
 * TrinoDB - https://trino.io
-* Prometheus - https://prometheus.io\
+* Prometheus - https://prometheus.io
 * more coming...
