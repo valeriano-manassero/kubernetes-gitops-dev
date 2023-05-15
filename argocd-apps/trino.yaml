@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trino
+  namespace: argocd
+spec:
+  destination:
+    namespace: trino
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: trino
+    repoURL: https://valeriano-manassero.github.io/helm-charts
+    targetRevision: x
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
