@@ -18,3 +18,11 @@ resource "kubectl_manifest" "ingress_nginx" {
   wait       = true
   depends_on = [ kind_cluster.main_cluster ]
 }
+
+resource "kubectl_manifest" "argocd_apps" {
+  provider   = kubectl
+  for_each   = fileset(path.module, "argocd-apps/*.yaml")
+  yaml_body  = file("${path.module}/${each.key}")
+  wait       = true
+  depends_on = [ kubectl_manifest.ingress_nginx ]
+}
