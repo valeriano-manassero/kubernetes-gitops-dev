@@ -39,7 +39,8 @@ Once logged in you will have some preconfigured application that can be created 
 
 ### Available preconfigured applications
 
-* ClearML (Server, Agent, Serving) - https://clear.ml
+* ClearML stack (Server, Agent, Serving) - https://clear.ml
 * TrinoDB - https://trino.io
-* Prometheus - https://prometheus.io
+* Grafana stack (Grafana, Loki, Prometheus, Tempo ...) - https://grafana.com
+* Istio stack (base, istiod) - https://istio.io
 * more coming...
