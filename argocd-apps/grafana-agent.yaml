@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana-agent
+  namespace: argocd
+spec:
+  destination:
+    namespace: grafana-agent
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: grafana-agent
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: x
+    helm:
+      values: |
+        agent:
+          mode: 'static'
+          configMap:
+            content: ''
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
