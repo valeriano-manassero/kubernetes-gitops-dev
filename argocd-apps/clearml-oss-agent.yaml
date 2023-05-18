@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         agentk8sglue:
-          debugMode: true         
+          debugMode: true
           queue: default
   syncPolicy:
     syncOptions:
