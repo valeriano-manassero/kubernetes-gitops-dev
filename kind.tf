@@ -18,11 +18,11 @@ resource "kind_cluster" "main_cluster" {
             EOT
           ]
           extra_port_mappings {
-            container_port = 32080
+            container_port = 80
             host_port      = 80
           }
           extra_port_mappings {
-            container_port = 32443
+            container_port = 443
             host_port      = 443
           }
       }
