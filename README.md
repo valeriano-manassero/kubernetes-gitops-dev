@@ -42,5 +42,5 @@ Once logged in you will have some preconfigured application that can be created 
 * ClearML stack (Server, Agent, Serving) - https://clear.ml
 * TrinoDB - https://trino.io
 * Grafana stack (Grafana, Loki, Prometheus, Tempo ...) - https://grafana.com
-* Istio stack (base, istiod) - https://istio.io
+* Opentelemetry operator - https://opentelemetry.io
 * more coming...
