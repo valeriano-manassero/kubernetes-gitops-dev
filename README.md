@@ -43,4 +43,5 @@ Once logged in you will have some preconfigured application that can be created 
 * TrinoDB - https://trino.io
 * Grafana stack (Grafana, Loki, Prometheus, Tempo ...) - https://grafana.com
 * Opentelemetry operator - https://opentelemetry.io
+* Cert-manager - https://www.jetstack.io/open-source/cert-manager/
 * more coming...
