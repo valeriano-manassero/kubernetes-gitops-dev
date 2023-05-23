@@ -12,7 +12,6 @@ spec:
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
     chart: opentelemetry-operator
     targetRevision: x
-  ignoreDifferences:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
