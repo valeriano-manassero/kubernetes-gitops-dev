@@ -12,6 +12,28 @@ spec:
     chart: clearml-serving
     repoURL: https://allegroai.github.io/clearml-helm-charts
     targetRevision: x
+    helm:
+      values: |
+        clearml:
+          apiAccessKey: "access_key"
+          apiSecretKey: "secret_key"
+          apiHost: "http://clearml-enterprise-apiserver.clearml:8008"
+          fileHost: "http://clearml-enterprise-fileserver.clearml:8081"
+          webHost: "http://clearml-enterprise-webserver.clearml:8080"
+          servingTaskId: "task_id"
+        grafana:
+          ingress:
+            enabled: true
+            hosts:
+              - "grafana-serving.clearml.127-0-0-1.nip.io"
+        clearml_serving_inference:
+          ingress:
+            enabled: true
+            hostName: "serving.clearml.127-0-0-1.nip.io"
+        clearml_serving_triton:
+          ingress:
+            enabled: true
+            hostName: "serving-grpc.clearml.127-0-0-1.nip.io"
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
